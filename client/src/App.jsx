@@ -1,13 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom' 
+import Signin from './Login/Signin'
+import Signup from './Login/Signup'
+import Landing from './Landing/Landing'
 
 function App() {
 
   return (
     <>
-      <p className='text-3xl underline hover:text-red-500'>Hello</p>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
+      
     </>
   )
 }
